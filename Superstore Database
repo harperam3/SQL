@@ -35,18 +35,14 @@ FROM superstore
 ORDER BY price asc;
 
 #Show a statistic about the item prices:
-SELECT SUM(price), category
-FROM superstore
-GROUP BY category
-ORDER BY sum(price);
--- A sum of the total amount spent in each catergory
+SELECT SUM(price)
+FROM superstore;
 
 #Show a statistic about the price for the items in the category "Kitchen Supplies"
-SELECT MIN(price), item_name
+SELECT AVG(price)
 FROM superstore
-WHERE category= 'Kitchen Supplies'
-GROUP BY item_name;
+WHERE category= 'Kitchen Supplies';
 
-#Show the how much each item is in stock
+#Show amount of each item in stock
 SELECT stock_quantity, item_name
 FROM superstore;
